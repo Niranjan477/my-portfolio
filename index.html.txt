@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+    </header>
+
+    <main>
+        <!-- Password form for owner access -->
+        <form id="passwordForm">
+            <label for="password">Enter Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <button type="button" onclick="checkPassword()">Submit</button>
+        </form>
+
+        <!-- Owner-only content -->
+        <section id="ownerContent" style="display: none;">
+            <h2>About Me</h2>
+            <p>This is a personal portfolio webpage.</p>
+
+            <h2>Contact Me</h2>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <br><br>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Write your message" required></textarea>
+                <br><br>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for password protection
+        function checkPassword() {
+            const passwordInput = document.getElementById('password').value;
+            const correctPassword = 'mySecurePassword'; // Change this to your password
+
+            if (passwordInput === correctPassword) {
+                document.getElementById('passwordForm').style.display = 'none';
+                document.getElementById('ownerContent').style.display = 'block';
+            } else {
+                alert('Incorrect password. Access denied!');
+            }
+        }
+    </script>
+</body>
+</html>
